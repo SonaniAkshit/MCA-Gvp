@@ -1,56 +1,26 @@
-import java.util.*;
-
-class commandminmax
-{
-    public static void main(String args[])
-    {
-
-        if (args.length == 0)
-        {
-            System.out.println("Please provide some integers as command-line arguments.");
+import java.util.Arrays;
+class commandminmax {
+    public static void main(String[] args) {
+        if (args.length != 5) {
+            System.out.println("Please enter exactly five integers.");
             return;
         }
 
-        int i,j,temp;
-        int[] a = new int[args.length];
-        int max = Integer.MIN_VALUE,min = Integer.MAX_VALUE;
+        int[] numbers = new int[5];
 
-        System.out.println("\nInputed Elements:");
-        for (i = 0; i < a.length; i++)
-        {
-            a[i] = Integer.parseInt(args[i]);
-            System.out.print(" "+a[i]);
-
-            if (a[i] > max)
-            {
-                max = a[i];
+        try {
+            for (int i = 0; i < 5; i++) {
+                numbers[i] = Integer.parseInt(args[i]);
             }
-            if (a[i] < min)
-            {
-                min = a[i];
-            }
-        }
-        for (i = 0; i < a.length - 1; i++)
-        {
-            for (j = 0; j < a.length - 1 - i; j++)
-            {
-                if (a[j] > a[j + 1])
-                {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-        // Arrays.sort(a);
-
-        System.out.println("\nSorted Array:");
-        for (i = 0; i < a.length; i++)
-        {
-            System.out.print(" "+a[i]);
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter valid integers.");
+            return;
         }
 
-        System.out.println("\nMax Value: " + max);
-        System.out.println("\nMin Value: " + min);
+        Arrays.sort(numbers);
+
+        System.out.println("Sorted numbers: " + Arrays.toString(numbers));
+        System.out.println("Minimum value: " + numbers[0]);
+        System.out.println("Maximum value: " + numbers[numbers.length - 1]);
     }
 }
