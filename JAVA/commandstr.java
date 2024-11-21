@@ -10,24 +10,20 @@ class commandstr {
         String[] strings = new String[5];
         boolean containsOnlyNumbers = true;
 
-        // Copying command line arguments into the strings array
         for (int i = 0; i < 5; i++) {
             strings[i] = args[i];
-            if (!args[i].matches("\\d+")) { // Check if the string is not a number
+            if (!args[i].matches("\\d+")) { 
                 containsOnlyNumbers = false;
             }
         }
 
-        // Check if all entered strings are numbers
         if (containsOnlyNumbers) {
             System.out.println("Error: Please enter at least one non-numeric string.");
             return;
         }
 
-        // Sorting the strings array
         Arrays.sort(strings);
 
-        // Displaying the sorted strings
         System.out.println("Sorted strings: " + Arrays.toString(strings));
     }
 }
