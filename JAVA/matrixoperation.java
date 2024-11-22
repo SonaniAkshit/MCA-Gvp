@@ -5,18 +5,15 @@ class matrixoperation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Input dimensions of matrices
         System.out.print("Enter number of rows of matrix: ");
         int rows = scanner.nextInt();
         System.out.print("Enter number of columns of matrix: ");
         int columns = scanner.nextInt();
 
-        // Initialize matrices
         int[][] matrix1 = new int[rows][columns];
         int[][] matrix2 = new int[rows][columns];
         int[][] resultMatrix = new int[rows][columns];
 
-        // Input elements of matrix1
         System.out.println("Enter elements of matrix1:");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -24,7 +21,6 @@ class matrixoperation {
             }
         }
 
-        // Input elements of matrix2
         System.out.println("Enter elements of matrix2:");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -32,7 +28,6 @@ class matrixoperation {
             }
         }
 
-        // Perform Addition
         System.out.println("Matrix Addition:");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -42,7 +37,6 @@ class matrixoperation {
             System.out.println();
         }
 
-        // Perform Subtraction
         System.out.println("Matrix Subtraction:");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -52,8 +46,6 @@ class matrixoperation {
             System.out.println();
         }
 
-        // Perform Multiplication
-        // Only proceed if the number of columns in matrix1 is equal to the number of rows in matrix2
         if (columns == rows) {
             int[][] productMatrix = new int[rows][columns];
             System.out.println("Matrix Multiplication:");
