@@ -5,14 +5,12 @@ class Stack {
     private int top;
     private final int maxSize;
 
-    // Constructor to initialize stack with a specified size
     public Stack(int size) {
         this.maxSize = size;
         this.stack = new int[maxSize];
         this.top = -1;
     }
 
-    // Method to push a value onto the stack
     public void push(int value) {
         if (top == maxSize - 1) {
             System.out.println("Stack is full. Cannot push " + value);
@@ -21,16 +19,14 @@ class Stack {
         stack[++top] = value;
     }
 
-    // Method to pop a value from the stack
     public int pop() {
         if (top == -1) {
             System.out.println("Stack is empty. Cannot pop.");
-            return -1; // Indicating an error
+            return -1; 
         }
         return stack[top--];
     }
 
-    // Method to traverse and display the stack
     public void traverse() {
         if (top == -1) {
             System.out.println("Stack is empty.");
@@ -42,7 +38,6 @@ class Stack {
         }
     }
 
-    // Main method for testing with user input
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter stack size: ");
