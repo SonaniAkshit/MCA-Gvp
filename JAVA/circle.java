@@ -4,8 +4,7 @@ class circle {
     private double x;
     private double y;
     private double r;
-
-    // Default constructor
+    
     public circle() {
         this.x = 0;
         this.y = 0;
